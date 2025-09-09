@@ -1,6 +1,5 @@
 import ChatInput from "@/Components/ChatInput";
 import ChatScreen from "@/Components/ChatScreen";
-import Navbar from "@/Components/Navbar";
 import Settings from "@/Components/Login";
 import Sidebar from "@/Components/Sidebar";
 
@@ -12,7 +11,6 @@ export default function Home() {
           <Sidebar />
           <Settings />
         </div>
-
         <ChatScreen />
       </div>
     </>

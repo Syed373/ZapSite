@@ -15,8 +15,8 @@ export default function ChatInput() {
   }, [value]);
 
   return (
-    <div className="bg-back w-full max-w-4xl mx-auto p-1 rounded-2xl border border-[#353535]">
-      <div className="bg-background w-full rounded-2xl flex flex-col justify-center items-center">
+    <div className="bg-Light dark:bg-Dark w-full max-w-4xl mx-auto p-1 rounded-2xl border border-[#353535]">
+      <div className="bg-background dark:bg-background w-full rounded-2xl flex flex-col justify-center items-center">
 
         <textarea
           ref={textareaRef}
@@ -32,11 +32,11 @@ export default function ChatInput() {
 
         <div className="flex justify-between items-center py-2 border-t border-[#353535] w-[90%]">
           <button className=" flex gap-4 items-center">
-            <div className="cursor-pointer"><img src="Plus.svg" alt="Other Options" /></div>
+            <div className="cursor-pointer"><img src="Plus.svg" alt="Other Options" className="text-foreground"/></div>
             <div className="text-sm sm:text-base text-gray-400 hover:text-white transition cursor-pointer">Agents</div>
           </button>
-          <button className="hover:bg-WhenHover text-white p-3 rounded-full text-sm sm:text-base transition">
-            <img src="Send.svg" alt="Send Icon" />
+          <button className="hover:bg-WhenHover text-white p-3 rounded-full text-sm  transition">
+            <img src="Send.svg" alt="Send Icon" className="text-foreground"/>
           </button>
         </div>
       </div>
