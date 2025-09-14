@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useTheme } from "next-themes";
+import ThemeToggleIcon from "../Icons/ThemeToggleIcon";
 
 function ThemeToggle() {
     const [mount, setmount] = useState(false);
@@ -19,8 +20,8 @@ function ThemeToggle() {
     return mount ? (
         <button
             onClick={toggleTheme}
-            className='cursor-pointer'>
-            <img src="ThemeToggle.svg" alt="Theme toggle" className="text-foreground"/>
+            className='cursor-pointer transition-all duration-300'>
+            <ThemeToggleIcon />
         </button>
     ): null
 }

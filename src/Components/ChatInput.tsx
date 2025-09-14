@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Send from "./Icons/Send";
+import Plus from "./Icons/Plus";
 
 export default function ChatInput() {
   const [value, setValue] = useState("");
@@ -32,11 +34,11 @@ export default function ChatInput() {
 
         <div className="flex justify-between items-center py-2 border-t border-[#353535] w-[90%]">
           <button className=" flex gap-4 items-center">
-            <div className="cursor-pointer"><img src="Plus.svg" alt="Other Options" className="text-foreground"/></div>
+            <div className="cursor-pointer"><Plus /></div>
             <div className="text-sm sm:text-base text-gray-400 hover:text-white transition cursor-pointer">Agents</div>
           </button>
           <button className="hover:bg-WhenHover text-white p-3 rounded-full text-sm  transition">
-            <img src="Send.svg" alt="Send Icon" className="text-foreground"/>
+            <Send />
           </button>
         </div>
       </div>
