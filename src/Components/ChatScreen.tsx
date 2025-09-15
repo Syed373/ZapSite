@@ -3,7 +3,7 @@ import ChatInput from './ChatInput'
 
 function ChatScreen() {
     return (
-        <div className="bg-back h-full w-full rounded-xl flex justify-center font-mono">
+        <div className="bg-back h-full w-full rounded-xl flex justify-center font-mono transition-all ease-out duration-500">
             <div className="h-full w-4xl flex flex-col">
                 <div className="flex flex-1 overflow-y-auto p-4 justify-center items-center ">
                     <div className='space-y-2 text-sm'>

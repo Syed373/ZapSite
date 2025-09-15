@@ -56,14 +56,12 @@ function Sidebar() {
           </div>
         </div>
       </div>
-      <div className={`bg-back rounded-xl transition-all ease-out duration-500 overflow-hidden ${ToggleSidebar ? 'h-14 w-64' : 'h-28 w-16'}`}>
+      <div className={`bg-back rounded-xl transition-all ease-out duration-500 overflow-hidden ${ToggleSidebar ? 'h-13.5 w-64' : 'h-31 w-16'}`}>
         <div className={`h-full flex items-center transition-all duration-300 ${ToggleSidebar ? 'justify-center gap-6 px-4' : 'flex-col justify-center gap-4'}`}>
-          <button className={`text-sm font-mono border border-[#353535] rounded-xl cursor-pointer hover:bg-WhenHover transition-all duration-300 ${ToggleSidebar
-              ? 'px-16 py-2 opacity-100 translate-x-0'
-              : 'px-3 py-2 opacity-0 translate-y-2 pointer-events-none'
-            }`}>
-            {ToggleSidebar ? 'Login' : 'L'}
+          <button className={` ${ToggleSidebar ? 'text-sm font-mono border border-[#353535] rounded-xl cursor-pointer hover:bg-WhenHover transition-all duration-300 px-16 py-2 opacity-100 translate-x-0' : 'hidden'}`}>
+            Login
           </button>
+          <button className={`${ToggleSidebar ? 'hidden' : 'p-4 border rounded-full border-[#353535]'}`}></button>
           <div className={`transition-all duration-300 ${ToggleSidebar ? 'opacity-100 translate-x-0' : 'opacity-100 translate-x-0'}`}>
             <ThemeToggle />
           </div>
