@@ -18,7 +18,7 @@ export default function ChatInput() {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-1 rounded-2xl border border-[#353535]">
-      <div className="transition-all ease-out duration-500 bg-background w-full rounded-2xl flex flex-col justify-center items-center">
+      <div className="transition-all ease-in-out duration-500 bg-background w-full rounded-2xl flex flex-col justify-center items-center">
 
         <textarea
           ref={textareaRef}
