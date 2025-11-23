@@ -37,7 +37,7 @@ export default function ChatInput() {
             <div className="cursor-pointer"><Plus /></div>
             <div className="text-sm sm:text-base text-gray-400 hover:text-white transition cursor-pointer">Agents</div>
           </button>
-          <button className="hover:bg-WhenHover text-white p-3 rounded-full text-sm  transition">
+          <button className="hover:bg-WhenHover text-white p-3 rounded-full text-sm transition">
             <Send />
           </button>
         </div>

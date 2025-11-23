@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Sidebar() {
+function Navbar() {
   return (
     <div className='h-[91.5%] w-80 rounded-tr-xl'>
 
@@ -8,4 +8,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar
+export default Navbar
