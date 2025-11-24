@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import SidebarIcon from './Icons/SidebarIcon'
-import Plus from './Icons/Plus'
+import Add from './Icons/Add'
 import ThemeToggle from './ui/ThemeToggle'
 import { useRouter } from 'next/navigation'
 import UserIcon from './Icons/UserIcon'
@@ -38,7 +38,7 @@ function Sidebar() {
             ? 'border border-[#353535] p-2 rounded-lg hover:bg-WhenHover justify-start text-sm md:text-base'
             : 'mt-2 md:mt-4 rounded-full hover:bg-WhenHover justify-center'
             }`}>
-            <Plus />
+            <Add />
             <span className={`transition-all duration-300 ${ToggleSidebar ? 'opacity-100 px-2' : 'hidden'
               }`}>
               New Chat
@@ -51,7 +51,8 @@ function Sidebar() {
               <div className='underline underline-offset-4 text-center p-2 rounded-lg text-xs md:text-sm cursor-pointer transition-colors duration-200 flex-shrink-0'>
                 History
               </div>
-              <div className='flex-1 min-h-0 overflow-y-auto'>
+              <div className='flex-1 min-h-0 overflow-y-auto flex flex-col gap-2'>
+                {<button></button>} //History to be added
               </div>
             </div>
           </div>
