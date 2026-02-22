@@ -1,21 +1,17 @@
 
-import ChatInput from './ChatInput'
+import React from 'react'
 
-function ChatScreen() {
+interface ChatScreenProps {
+    isOpen: boolean;
+}
+
+function ChatScreen({ isOpen }: ChatScreenProps) {
     return (
-        <div className="bg-back h-full flex-1 rounded-xl flex justify-center font-mono transition-all ease-in-out duration-500 min-w-0">
-            <div className="h-full w-full max-w-4xl flex flex-col">
-                <div className="flex flex-1 overflow-y-auto p-2 md:p-4 justify-center items-center ">
-                    <div className='space-y-2 text-xs md:text-sm w-full max-w-md'>
-                        <div className="hover:bg-WhenHover p-2 rounded-lg text-foreground">- Write a short story about a robot discovering emotions</div>
-                        <div className="hover:bg-WhenHover p-2 rounded-lg text-foreground">- Help me outline a sci-fi novel set in a post-apocalyptic world</div>
-                        <div className="hover:bg-WhenHover p-2 rounded-lg text-foreground">- How many Rs are in the word 'strawberry'? </div>
-                        <div className="hover:bg-WhenHover p-2 rounded-lg text-foreground">- Give me 5 creative writing prompts for flash fiction</div>
-                    </div>
-                </div>
-
-                <div className="p-2">
-                    <ChatInput />
+        <div className={`bg-back flex-1 rounded-xl font-mono transition-all ease-in-out duration-500 flex flex-col overflow-hidden h-[86%] right-2 fixed ${isOpen? 'w-[78.65%]' : 'w-[98.8%]'} `}>
+            <div className={`flex-1 overflow-y-auto p-4 flex justify-center items-center`}>
+                {/* Empty state */}
+                <div className="text-center text-foreground text-2xl font-bold opacity-30 select-none">
+                    ALL chats will be displayed here
                 </div>
             </div>
         </div>

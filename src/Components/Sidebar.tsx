@@ -1,90 +1,54 @@
 "use client"
 
 import React, { useState } from 'react'
-import SidebarIcon from './Icons/SidebarIcon'
 import Add from './Icons/Add'
-import ThemeToggle from './ui/ThemeToggle'
-import { useRouter } from 'next/navigation'
-import UserIcon from './Icons/UserIcon'
+import Search from './Icons/Search'
 
-function Sidebar() {
-  const [ToggleSidebar, SetToggleSidebar] = useState(false);
-  const router = useRouter();
+interface SidebarProps {
+  isOpen: boolean;
+}
 
-  function SidebarToggle() {
-    SetToggleSidebar(!ToggleSidebar);
-  }
+function Sidebar({ isOpen }: SidebarProps) {
 
   return (
-    <div className={`max-h-screen flex flex-col space-y-2 md:space-y-4 z-50 ${ToggleSidebar ? 'absolute md:relative h-full' : 'relative'}`}>
-      <div className={`bg-back rounded-xl font-mono transition-all ease-in-out duration-500 overflow-hidden flex-1 min-h-0 ${ToggleSidebar ? 'w-64 sm:w-72 md:w-64 shadow-2xl md:shadow-none' : 'w-14 sm:w-16'
-        }`}>
-        <div className='p-2 md:p-4 h-full flex flex-col'>
-          <div className={`flex items-center transition-all duration-300 p-1 md:p-2 ${ToggleSidebar ? 'justify-between' : 'flex-col justify-center gap-4 md:gap-8'
-            }`}>
-            <div className={`cursor-pointer transition-all duration-300 text-sm md:text-base ${ToggleSidebar ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none hidden'
-              }`}>
-              ZapSite
-            </div>
-            <button
-              onClick={SidebarToggle}
-              className={`cursor-pointer transition-all duration-200 p-1`}
-            >
-              <SidebarIcon />
-            </button>
-          </div>
+    <div
+      className={`bg-back font-mono transition-all ease-in-out rounded-xl duration-500 overflow-hidden flex-shrink-0 flex flex-col bottom-4 fixed w-64 sm:w-76 ${isOpen ? ' h-[96%] translate-y-0' : 'h-0 translate-y-[100%]'
+        }`}
+    >
+      {/* LOGO */}
+      <div className="flex items-center justify-center py-4 px-4 flex-shrink-0">
+        <span className="text-lg font-bold tracking-widest">LOGO</span>
+      </div>
 
-          <button className={`cursor-pointer w-full flex items-center gap-2 mt-2 md:mt-0 ${ToggleSidebar
-            ? 'border border-[#353535] p-2 rounded-lg hover:bg-WhenHover justify-start text-sm md:text-base'
-            : 'mt-2 md:mt-4 rounded-full hover:bg-WhenHover justify-center'
-            }`}>
-            <Add />
-            <span className={`transition-all duration-300 ${ToggleSidebar ? 'opacity-100 px-2' : 'hidden'
-              }`}>
-              New Chat
-            </span>
-          </button>
+      {/* New Chat row */}
+      <div className="flex items-center justify-between px-3 pb-3 flex-shrink-0">
+        <span className="text-sm">New Chat</span>
+        <button
+          className="cursor-pointer hover:bg-WhenHover rounded-full p-1 transition-colors duration-200"
+        >
+          <Add />
+        </button>
+      </div>
 
-          <div className={`flex-1 min-h-0 mt-2 md:mt-4 transition-all duration-300 ${ToggleSidebar ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            }`}>
-            <div className='border-t border-[#353535] h-full flex flex-col'>
-              <div className='underline underline-offset-4 text-center p-2 rounded-lg text-xs md:text-sm cursor-pointer transition-colors duration-200 flex-shrink-0'>
-                History
-              </div>
-              <div className='flex-1 min-h-0 overflow-y-auto flex flex-col gap-2'>
-                {<button></button>} //History to be added
-              </div>
-            </div>
-          </div>
+      {/* Search bar */}
+      <div className="px-3 pb-3 flex-shrink-0">
+        <div className="flex items-center gap-2 border border-[#353535] rounded-lg px-3 py-1.5">
+          <span className="text-sm text-gray-400 flex-1">Search......</span>
+          <Search />
         </div>
       </div>
 
-      <div className={`bg-back rounded-xl transition-all ease-in-out duration-500 overflow-hidden flex-shrink-0 ${ToggleSidebar ? 'h-16 w-64 sm:w-72 md:w-64 shadow-2xl md:shadow-none' : 'h-24 sm:h-32 md:h-32 w-14 sm:w-16'
-        }`}>
-        <div className={`h-full flex items-center transition-all duration-300 ${ToggleSidebar ? 'justify-center gap-3 md:gap-6 px-2 md:px-4' : 'flex-col justify-center gap-2 md:gap-4'
-          }`}>
-          <button
-            onClick={() => { router.push('/Login') }}
-            className={`${ToggleSidebar
-              ? 'text-xs md:text-sm font-mono border border-[#353535] rounded-xl cursor-pointer hover:bg-WhenHover transition-all duration-300 px-6 md:px-12 py-1.5 md:py-2 opacity-100 translate-x-0 flex gap-2 items-center'
-              : 'hidden'
-              }`}
-          >
-            <UserIcon /> <span>Login</span>
-          </button>
-          <button
-            onClick={() => { router.push('/Login') }}
-            className={`${ToggleSidebar ? 'hidden' : 'px-3 py-1 md:px-4 md:py-2 text-xl hover:bg-WhenHover rounded-full cursor-pointer transition-all duration-300'
-              }`}>
-            <UserIcon />
-          </button>
-          <div className={`transition-all duration-300 ${ToggleSidebar ? 'opacity-100 translate-x-0' : 'opacity-100 translate-x-0'
-            }`}>
-            <ThemeToggle />
-          </div>
+      {/* Previous Chats section */}
+      <div className="flex-1 min-h-0 flex flex-col border-t border-[#353535]">
+        <div className="px-3 py-2 text-xs text-gray-400 underline underline-offset-4 flex-shrink-0">
+          Previous Chats
+        </div>
+        <div className="flex-1 min-h-0 overflow-y-auto px-2 flex flex-col gap-1">
+          {/* History items will be added here */}
         </div>
       </div>
     </div>
+    
   )
 }
 
