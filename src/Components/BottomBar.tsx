@@ -29,18 +29,18 @@ export default function BottomBar({ onToggleSidebar }: BottomBarProps) {
     return (
         <div className="flex bottom-3 fixed items-end z-10">
             {/* Login button */}
-            <div className="flex-shrink-0 w-76 flex items-center justify-between gap-2 px-3 py-2 bg-back transition-all ease-in-out duration-500 mx-2 rounded-xl h-16">
+            <div className={`flex-shrink-0 w-76 flex items-center justify-between gap-2 px-3 py-2 bg-back transition-all ease-in-out duration-500 mx-2 rounded-xl h-16`}>
                 <button
                     onClick={() => { router.push('/Login') }}
-                    className="flex items-center justify-center gap-2 bg-background text-foreground text-sm font-mono rounded-xl w-50 px-4 py-1.5 transition-colors duration-200 cursor-pointer"
+                    className="flex items-center justify-center gap-2 bg-background border border-[#353535] text-sm font-mono rounded-xl w-50 px-4 py-1.5 transition-colors duration-200 cursor-pointer"
                 >
                     <UserIcon />
                     <span>Login</span>
                 </button>
 
-                <button className="flex-shrink-0 mt-1.5 rounded-full cursor-pointer">
+                <div className="flex-shrink-0 mt-1.5 rounded-full cursor-pointer">
                     <ThemeToggle />
-                </button>
+                </div>
 
                 {/* Sidebar toggle */}
                 <button
@@ -52,7 +52,7 @@ export default function BottomBar({ onToggleSidebar }: BottomBarProps) {
             </div>
 
             {/* Text input */}
-            <div className="flex-shrink-0 w-5xl flex items-center gap-2 px-3 py-2 bg-back transition-all ease-in-out duration-500 rounded-xl h-16">
+            <div className="flex-shrink-0 w-5xl flex items-center gap-2 px-3 py-2 bg-back transition-all ease-in-out duration-500 rounded-xl min-h-16">
                 <div className="flex-1 flex items-center border border-[#353535] rounded-xl px-3 py-1 bg-background transition-all ease-in-out duration-500 min-w-0">
                     <textarea
                         ref={textareaRef}

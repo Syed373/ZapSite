@@ -12,7 +12,7 @@ function Sidebar({ isOpen }: SidebarProps) {
 
   return (
     <div
-      className={`bg-back font-mono transition-all ease-in-out rounded-xl duration-500 overflow-hidden flex-shrink-0 flex flex-col bottom-4 fixed w-64 sm:w-76 ${isOpen ? ' h-[96%] translate-y-0' : 'h-0 translate-y-[100%]'
+      className={`bg-back font-mono transition-all ease-in-out rounded-xl duration-500 overflow-hidden flex-shrink-0 flex flex-col bottom-4 fixed w-64 sm:w-76 ${isOpen ? 'h-[96%]' : 'h-0'
         }`}
     >
       {/* LOGO */}
@@ -21,26 +21,22 @@ function Sidebar({ isOpen }: SidebarProps) {
       </div>
 
       {/* New Chat row */}
-      <div className="flex items-center justify-between px-3 pb-3 flex-shrink-0">
+      <div className="flex items-center justify-between px-4 py-3 mx-3 mb-3 bg-background flex-shrink-0 cursor-pointer hover:bg-WhenHover rounded-full transition-colors duration-200 border border-[#353535]">
         <span className="text-sm">New Chat</span>
-        <button
-          className="cursor-pointer hover:bg-WhenHover rounded-full p-1 transition-colors duration-200"
-        >
+        <button>
           <Add />
         </button>
       </div>
 
       {/* Search bar */}
-      <div className="px-3 pb-3 flex-shrink-0">
-        <div className="flex items-center gap-2 border border-[#353535] rounded-lg px-3 py-1.5">
-          <span className="text-sm text-gray-400 flex-1">Search......</span>
-          <Search />
-        </div>
+      <div className="flex items-center justify-between px-4 py-3 mx-3 mb-3 bg-background flex-shrink-0 cursor-pointer hover:bg-WhenHover rounded-full transition-colors duration-200 border border-[#353535]">
+        <span className="text-sm flex-1">Search......</span>
+        <Search />
       </div>
 
       {/* Previous Chats section */}
-      <div className="flex-1 min-h-0 flex flex-col border-t border-[#353535]">
-        <div className="px-3 py-2 text-xs text-gray-400 underline underline-offset-4 flex-shrink-0">
+      <div className="flex-1 h-20 flex flex-col border border-[#353535] p-1 mx-3 mb-18 rounded-xl bg-background overflow-hidden">
+        <div className="px-3 py-2 mb-2 text-xs text-center  underline underline-offset-4 flex-shrink-0">
           Previous Chats
         </div>
         <div className="flex-1 min-h-0 overflow-y-auto px-2 flex flex-col gap-1">
