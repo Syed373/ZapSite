@@ -31,7 +31,7 @@ export default function BottomBar({ onToggleSidebar }: BottomBarProps) {
             {/* Login button */}
             <div className={`flex-shrink-0 w-76 flex items-center justify-between gap-2 px-3 py-2 bg-back transition-all ease-in-out duration-500 mx-2 rounded-xl h-16`}>
                 <button
-                    onClick={() => { router.push('/Login') }}
+                    onClick={() => { router.push('/login') }}
                     className="flex items-center justify-center gap-2 bg-background border border-[#353535] text-sm font-mono rounded-xl w-50 px-4 py-1.5 transition-colors duration-200 cursor-pointer"
                 >
                     <UserIcon />

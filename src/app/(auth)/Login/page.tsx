@@ -156,7 +156,7 @@ export default function LoginPage() {
             <div className="text-center mt-8">
               <p className="text-sm opacity-70">
                 Don't have an account?{' '}
-                <button type='button' onClick={()=>{router.push('/Signup')}} className="text-blue-500 hover:text-blue-600 font-semibold transition-colors cursor-pointer">
+                <button type='button' onClick={()=>{router.push('/signup')}} className="text-blue-500 hover:text-blue-600 font-semibold transition-colors cursor-pointer">
                   Sign up here
                 </button>
               </p>
