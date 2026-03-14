@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden">
       {/* Main content area: sidebar + chat */}
-      <div className="flex flex-1 min-h-0 p-2 md:px-2 md:py-3">
+      <div className="flex flex-1 min-h-0 p-2 lg:px-2 lg:py-3">
         {/* Sidebar panel */}
         <Sidebar isOpen={sidebarOpen} />
 
